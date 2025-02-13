@@ -221,21 +221,21 @@
       
       setInterval(createHeart, 300);
   
-      function acceptProposal() {
-          const container = document.getElementById("proposal");
-          container.style.transition = "all 1s ease";
-          container.style.transform = "scale(0)";
+function acceptProposal() {
+    const container = document.getElementById("proposal");
+    container.style.transition = "all 1s ease";
+    container.style.transform = "scale(0)";
           
-          
-          setInterval(createHeart, 100);
-          
-          setTimeout(() => {
-              container.style.display = "none";
-              const celebration = document.getElementById("celebration");
-              celebration.classList.remove("hidden");
-              celebration.classList.add("show");
-          }, 1000);
-      }
+
+    setInterval(createHeart, 100);
+
+    setTimeout(() => {
+        container.style.display = "none";
+        const celebration = document.getElementById("celebration");
+        celebration.classList.remove("hidden");
+        celebration.classList.add("show");
+    }, 1000);
+}
       
       function declineProposal() {
           if (noIndex < noTexts.length) {
