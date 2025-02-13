@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrs. Mwiza Valentine Proposal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #ffd6e4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        h1 {
+            color: #ff4d79;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 0 20px 0;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            z-index: 3;
+        }
+        .btn {
+            padding: 15px 40px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .hidden {
+            display: none !important;
+        }
+        #celebration {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffd6e4;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 4;
+        }
+        #celebration.show {
+            display: flex;
+        }
+        .character-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        .character-gif {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .celebration-gif {
+            max-width: 90vw;
+            max-height: 60vh;
+            margin: 20px 0;
+            z-index: 2;
+        }
+        .search-bar {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 3;
+        }
+        .celebration-message {
+            color: #ff4d79;
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: bounce 1s infinite;
+            z-index: 2;
+        }
+        .text-me-message {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 20px;
+            z-index: 2;
+        }
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            animation: fall linear forwards;
+            z-index: 1;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 5;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .music-controls button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 15px;
+            background: #ff4d79;
+            color: white;
+            cursor: pointer;
+        }
+        .music-controls button:hover {
+            background: #ff3366;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container" id="proposal">
+        
+        <h1>Mwiza Baby G!!! 🎉❤️🎉💖🎉💓 Will you be my Valentine?</h1>
+        
+        <div class="buttons">
+            <button id="yes" class="btn">Yes</button>
+            <button id="no" class="btn">No</button>
+        </div>
+
+        <div class="character-container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGxxZWt0cXQzMnlpNzRxNXI2M25hdmNhZ28xb3AzYTRqOHo1ZHI5ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" 
+                 alt="Cute character" 
+                 class="character-gif">
+        </div>
+    </div>
+
+    <div id="celebration" class="hidden">
+        <div class="celebration-message">I knew you would say yes! 💖</div>
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXU5ajkyd28yOXpkbGZ5bTZuZTY3NTh1ZDNkODR4YWg4aDR0MjJwcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" 
+             alt="Celebration" 
+             class="celebration-gif">
+        <div class="text-me-message">Please text me if you say yes! 📱💝</div>
+    </div>
+
+    <div class="music-controls">
+        <audio id="bgMusic" loop>
+            <source src="Glue song.mp3" type="audio/mp3">
+        </audio>
+        <button onclick="toggleMusic()">🎵 Toggle Music</button>
+    </div>
+
+    <script>
+     
+      let noTexts = [
+          "Really sure??", "Are you positive??", "Pretty please??",
+          "Just think about it!", "Give it another thought!", 
+          "Last chance!", "You're breaking my heart 💔", "Don't be mean! 🥺"
+      ];
+      let noIndex = 0;
+      let yesButton = document.getElementById("yes");
+      let noButton = document.getElementById("no");
+      
+      
+      function createHeart() {
+          const heart = document.createElement('div');
+          heart.innerHTML = '❤️';
+          heart.className = 'heart';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+          document.body.appendChild(heart);
+          
+          
+          heart.onanimationend = () => heart.remove();
+      }
+  
+      
+      setInterval(createHeart, 300);
+  
+      function acceptProposal() {
+          const container = document.getElementById("proposal");
+          container.style.transition = "all 1s ease";
+          container.style.transform = "scale(0)";
+          
+          
+          setInterval(createHeart, 100);
+          
+          setTimeout(() => {
+              container.style.display = "none";
+              const celebration = document.getElementById("celebration");
+              celebration.classList.remove("hidden");
+              celebration.classList.add("show");
+          }, 1000);
+      }
+      
+      function declineProposal() {
+          if (noIndex < noTexts.length) {
+              noButton.innerText = noTexts[noIndex];
+              noIndex++;
+              
+              yesButton.style.transform = `scale(${1 + noIndex * 0.2})`;
+              
+              const randomX = Math.random() * 200 - 100;
+              const randomY = Math.random() * 200 - 100;
+              noButton.style.transform = `translate(${randomX}px, ${randomY}px) scale(${1 - noIndex * 0.1})`;
+          } else {
+              noButton.style.display = "none";
+          }
+      }
+  
+      
+      const bgMusic = document.getElementById('bgMusic');
+      function toggleMusic() {
+          if (bgMusic.paused) {
+              bgMusic.play();
+          } else {
+              bgMusic.pause();
+          }
+      }
+  
+      yesButton.addEventListener("click", acceptProposal);
+      noButton.addEventListener("click", declineProposal);
+  </script>
+</body>
+</html>
